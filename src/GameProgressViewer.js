@@ -69,10 +69,19 @@ function GameProgressViewer() {
                 className="cell"
                 key={colIndex}
                 style={{
-                  backgroundColor: cell === 0 ? 'grey' : cell === 128 ? 'green' : cell === 129 ? 'red' : 'white'
+                  backgroundColor: cell === 0 ? 'grey' : cell === 128 ? 'green' : cell === 129 ? 'red' : 'white',
+                  width: '48px',
+                  height: '48px',
+                  position: 'relative', // Ensure the container is positioned relative to its parent
                 }}
               >
-                {cell >= 0x80 ? String.fromCharCode(cell - 0x80 + 'A'.charCodeAt(0)) : cell}
+                {cell > 0 && cell < 4 && ( // Check if the cell value is within range for fish images
+                  <>
+                    <img src={require(`./assets/images/${cell}_fish.png`)} alt={`Fish ${cell}`} style={{ width: '100%', height: '100%' }} />
+                    <span className="value-overlay">{cell}</span> {/* Display the value over the fish image */}
+                  </>
+                )}
+                {cell >= 0x80 && String.fromCharCode(cell - 0x80 + 'A'.charCodeAt(0))} {/* Display characters for cell values greater than or equal to 0x80 */}
               </div>
             ))}
           </div>
@@ -80,6 +89,8 @@ function GameProgressViewer() {
       </div>
     );
   };
+  
+  
 
   const renderPlayerScores = () => {
     if (!playerScores || playerScores.length === 0) return null;

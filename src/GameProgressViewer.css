@@ -50,13 +50,25 @@ input[type="file"] {
 }
 
 .cell {
-    width: 30px;
-    height: 30px;
+    width: 48px;
+    height: 48px;
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative; /* Ensure positioning context for the overlay */
 }
+
+.value-overlay {
+    position: absolute; /* Position the overlay relative to the cell */
+    bottom: 2px; /* Distance from bottom edge */
+    right: 2px; /* Distance from right edge */
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white; /* Text color */
+    font-size: 12px; /* Font size */
+    padding: 2px 4px; /* Padding around the text */
+    border-radius: 4px; /* Rounded corners */
+  }
 
 .controls {
     margin-bottom: 10px;
