@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .board {
+    margin-bottom: 10px;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .cell {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .player-scores {
+    margin-bottom: 10px;
+  }
+  
+  .controls {
+    margin-bottom: 10px;
+  }
+  
+  .turn-info {
+    margin-bottom: 10px;
+  }
+  
+  .controls button {
+    width: auto; /* Adjust button width to fit content */
+    padding: 5px 10px; /* Add padding for better appearance */
+    margin-right: 10px; /* Add margin between buttons */
+  }
+  
