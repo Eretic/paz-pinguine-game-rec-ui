@@ -1,6 +1,7 @@
 .container {
     display: flex;
     flex-direction: column;
+    margin-left: 20px; /* Add margin from left screen border */
   }
   
   .board {
