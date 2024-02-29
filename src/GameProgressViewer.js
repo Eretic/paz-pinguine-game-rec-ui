@@ -69,7 +69,6 @@ function GameProgressViewer() {
                 className="cell"
                 key={colIndex}
                 style={{
-                  backgroundColor: cell === 0 ? 'grey' : cell === 128 ? 'green' : cell === 129 ? 'red' : 'white',
                   width: '48px',
                   height: '48px',
                   position: 'relative', // Ensure the container is positioned relative to its parent
@@ -91,7 +90,14 @@ function GameProgressViewer() {
                     <span className="value-overlay">{cell}</span> {/* Display the value over the fish image */}
                   </>
                 )}
-                {cell >= 0x80 && String.fromCharCode(cell - 0x80 + 'A'.charCodeAt(0))} {/* Display characters for cell values greater than or equal to 0x80 */}
+                {cell >= 0x80 && (
+                <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                    <i className="fas fa-user player-symbol" style={{ color: cell === 128 ? 'green' : cell === 129 ? 'red' : 'black' }} />
+                    <span className="player-id" style={{ color: cell === 128 ? 'green' : cell === 129 ? 'red' : 'black', bottom: 0, right: 0 }}>
+                    {String.fromCharCode(cell - 0x80 + 'A'.charCodeAt(0))}
+                    </span>
+                </div>
+                )}
               </div>
             ))}
           </div>
@@ -100,8 +106,6 @@ function GameProgressViewer() {
     );
   };
   
-  
-
   const renderPlayerScores = () => {
     if (!playerScores || playerScores.length === 0) return null;
     const currentScores = playerScores[currentTurnIndex];

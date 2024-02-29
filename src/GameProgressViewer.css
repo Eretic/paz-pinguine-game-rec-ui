@@ -70,6 +70,24 @@ input[type="file"] {
     border-radius: 4px; /* Rounded corners */
   }
 
+  .player-symbol {
+    font-size: 24px; /* Increase font size by 25% */
+    position: absolute; /* Position the icon absolutely */
+    top: 50%; /* Align the icon vertically */
+    left: 50%; /* Align the icon horizontally */
+    transform: translate(-50%, -50%); /* Center the icon */
+    color: green; /* Set default color to green */
+  }
+
+  .player-id {
+    font-size: 14px; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    position: absolute; /* Position the text absolutely */
+    bottom: 5px; /* Set distance from bottom */
+    right: 5px; /* Set distance from right */
+    color: green; /* Set default color to green */
+  }
+
 .controls {
     margin-bottom: 10px;
 }
