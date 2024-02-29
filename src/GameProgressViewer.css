@@ -4,8 +4,34 @@
     margin-left: 20px; /* Add margin from left screen border */
   }
   
+  .game-info {
+    border: 1px solid #000; /* Border around game info */
+    padding: 10px; /* Add padding to game info */
+    margin-bottom: 10px; /* Add margin between game info and player info */
+    width: max-content; /* Align width to content */
+  }
+  
+  .game-info-table {
+    border-collapse: collapse; /* Collapse borders of table cells */
+    width: auto; /* Align width to content */
+  }
+  
+  .game-info-table td {
+    border: 1px solid #000; /* Border around table cells */
+    padding: 5px; /* Add padding to table cells */
+  }
+  
+  .player-info {
+    margin-bottom: 10px; /* Add margin between player info and board */
+  }
+  
+  .board-container {
+    display: flex;
+    margin-bottom: 10px; /* Add margin between board and controls */
+  }
+  
   .board {
-    margin-bottom: 10px;
+    flex: 1; /* Take remaining space */
   }
   
   .row {
@@ -19,10 +45,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .player-scores {
-    margin-bottom: 10px;
   }
   
   .controls {

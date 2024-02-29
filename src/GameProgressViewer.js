@@ -131,12 +131,29 @@ function GameProgressViewer() {
     <div className="container">
       <input type="file" onChange={handleFileChange} />
       <div className="game-info">
-        <div>Game Width: {gameSize ? gameSize.width : ''}</div>
-        <div>Game Height: {gameSize ? gameSize.height : ''}</div>
-        <div>Current Turn: {currentTurnIndex}</div>
-        <div>{renderTurn()}</div>
+        <table className="game-info-table">
+          <tbody>
+            <tr>
+              <td>Game Width:</td>
+              <td>{gameSize ? gameSize.width : ''}</td>
+            </tr>
+            <tr>
+              <td>Game Height:</td>
+              <td>{gameSize ? gameSize.height : ''}</td>
+            </tr>
+            <tr>
+              <td>Current Turn:</td>
+              <td>{currentTurnIndex}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div className="player-info">{renderPlayerScores()}</div>
+      <div className="player-info">
+        {renderPlayerScores()}
+      </div>
+      <div className="board-container">
+        <div className="board">{renderTurn()}</div>
+      </div>
       <div className="controls">
         <button onClick={handleFirstTurn} disabled={currentTurnIndex === 0}>
           First Turn
