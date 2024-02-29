@@ -13,7 +13,7 @@
   
   .game-info-table {
     border-collapse: collapse; /* Collapse borders of table cells */
-    width: auto; /* Align width to content */
+    width: max-content; /* Align width to content */
   }
   
   .game-info-table td {
@@ -22,7 +22,13 @@
   }
   
   .player-info {
-    margin-bottom: 10px; /* Add margin between player info and board */
+    margin-left: auto; /* Move player info to the right */
+  }
+  
+  .player-scores {
+    border: 1px solid #000; /* Border around player scores */
+    padding: 10px; /* Add padding to player scores */
+    margin-bottom: 10px; /* Add margin between player scores and board */
   }
   
   .board-container {

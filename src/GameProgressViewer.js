@@ -86,14 +86,7 @@ function GameProgressViewer() {
     const currentScores = playerScores[currentTurnIndex];
     return (
       <div className="player-scores">
-        <h2>Player Scores:</h2>
         <table>
-          <thead>
-            <tr>
-              <th>Player</th>
-              <th>Score</th>
-            </tr>
-          </thead>
           <tbody>
             {currentScores.map((score, playerIndex) => (
               <tr key={playerIndex}>
@@ -155,31 +148,27 @@ function GameProgressViewer() {
             </tr>
           </tbody>
         </table>
+        {renderPlayerScores()}
       </div>
       <div className="board-container">
         <div className="board">{renderTurn()}</div>
       </div>
-      <div className="turn-controls">
-        <div className="turn-info">
-          Current Turn: {currentTurnIndex}
-        </div>
-        <div className="controls">
-          <button onClick={handleFirstTurn} disabled={currentTurnIndex === 0}>
-            First Turn
-          </button>
-          <button onClick={handlePrevTurn} disabled={currentTurnIndex === 0}>
-            Previous Turn
-          </button>
-          <button onClick={handleNextTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
-            Next Turn
-          </button>
-          <button onClick={handleLastTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
-            Last Turn
-          </button>
-        </div>
+      <div className="turn-info">
+        Current Turn: {currentTurnIndex}
       </div>
-      <div className="player-info">
-        {renderPlayerScores()}
+      <div className="controls">
+        <button onClick={handleFirstTurn} disabled={currentTurnIndex === 0}>
+          First Turn
+        </button>
+        <button onClick={handlePrevTurn} disabled={currentTurnIndex === 0}>
+          Previous Turn
+        </button>
+        <button onClick={handleNextTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
+          Next Turn
+        </button>
+        <button onClick={handleLastTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
+          Last Turn
+        </button>
       </div>
     </div>
   );
