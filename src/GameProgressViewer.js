@@ -153,40 +153,33 @@ function GameProgressViewer() {
               <td>Penguins Count:</td>
               <td>{gameSize ? gameSize.penguins : ''}</td>
             </tr>
-            <tr>
-              <td>Current Turn:</td>
-              <td>{currentTurnIndex}</td>
-            </tr>
           </tbody>
         </table>
-      </div>
-      <div className="player-info">
-        {renderPlayerScores()}
       </div>
       <div className="board-container">
         <div className="board">{renderTurn()}</div>
       </div>
-      <div className="controls">
-        <button onClick={handleFirstTurn} disabled={currentTurnIndex === 0}>
-          First Turn
-        </button>
-        <button onClick={handlePrevTurn} disabled={currentTurnIndex === 0}>
-          Previous Turn
-        </button>
-        <button onClick={handleNextTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
-          Next Turn
-        </button>
-        <button onClick={handleLastTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
-          Last Turn
-        </button>
+      <div className="turn-controls">
+        <div className="turn-info">
+          Current Turn: {currentTurnIndex}
+        </div>
+        <div className="controls">
+          <button onClick={handleFirstTurn} disabled={currentTurnIndex === 0}>
+            First Turn
+          </button>
+          <button onClick={handlePrevTurn} disabled={currentTurnIndex === 0}>
+            Previous Turn
+          </button>
+          <button onClick={handleNextTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
+            Next Turn
+          </button>
+          <button onClick={handleLastTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
+            Last Turn
+          </button>
+        </div>
       </div>
-      <div className="turn-info">
-        <h2>Turn Information:</h2>
-        {turnsData && currentTurnIndex < turnsData.length && (
-          <div>
-            Turn {currentTurnIndex + 1}: {JSON.stringify(turnsData[currentTurnIndex])}
-          </div>
-        )}
+      <div className="player-info">
+        {renderPlayerScores()}
       </div>
     </div>
   );
