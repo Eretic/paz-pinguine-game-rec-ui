@@ -60,6 +60,7 @@ function GameProgressViewer() {
   const renderTurn = () => {
     if (!gameSize || !boardStates[currentTurnIndex]) return null;
     const currentBoardState = boardStates[currentTurnIndex];
+    const currentTurn = turnsData[currentTurnIndex];
     return (
       <div className="board">
         {currentBoardState.map((row, rowIndex) => (
@@ -102,6 +103,30 @@ function GameProgressViewer() {
             ))}
           </div>
         ))}
+      </div>
+    );
+  };
+  
+  const renderArrow = () => {
+    if (!gameSize || !boardStates[currentTurnIndex] || !turnsData || currentTurnIndex < 1) return null;
+  
+    const currentTurn = turnsData[currentTurnIndex - 1];
+    if (currentTurn.type !== 'move') return null;
+  
+    const { src_col, src_row, dst_col, dst_row } = currentTurn;
+  
+    return (
+      <div className="arrow-container">
+        <svg className="arrow" width="100%" height="100%">
+          {/* Define arrowhead marker */}
+          <defs>
+            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto" fill="lightgreen">
+              <polygon points="0 0, 10 3.5, 0 7" />
+            </marker>
+          </defs>
+          {/* Draw arrow line with arrowhead marker */}
+          <line x1={src_col * 50 + 25} y1={src_row * 50 + 25} x2={dst_col * 50 + 25} y2={dst_row * 50 + 25} stroke="lightgreen" strokeWidth="2" markerEnd="url(#arrowhead)" />
+        </svg>
       </div>
     );
   };
@@ -177,6 +202,7 @@ function GameProgressViewer() {
       </div>
       <div className="board-container">
         <div className="board">{renderTurn()}</div>
+        {renderArrow()} {/* Call the function to render the arrow */}
       </div>
       <div className="turn-info">
         Current Turn: {currentTurnIndex}

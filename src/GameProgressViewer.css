@@ -37,6 +37,7 @@ input[type="file"] {
 }
 
 .board-container {
+    position: relative; /* Ensure the container is positioned relative */
     display: flex;
     margin-bottom: 10px; /* Add margin between board and controls */
 }
@@ -101,3 +102,18 @@ input[type="file"] {
     padding: 5px 10px; /* Add padding for better appearance */
     margin-right: 10px; /* Add margin between buttons */
 }
+
+.arrow-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure the arrow doesn't interfere with mouse events */
+  }
+
+  .arrow {
+    pointer-events: none; /* Ensures the arrow does not interfere with click events on cells */
+    position: absolute; /* Position the arrow absolutely */
+    z-index: 1; /* Ensure the arrow appears above other elements */
+  }
