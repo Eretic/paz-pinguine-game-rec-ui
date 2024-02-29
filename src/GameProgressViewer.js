@@ -77,7 +77,17 @@ function GameProgressViewer() {
               >
                 {cell > 0 && cell < 4 && ( // Check if the cell value is within range for fish images
                   <>
-                    <img src={require(`./assets/images/${cell}_fish.png`)} alt={`Fish ${cell}`} style={{ width: '100%', height: '100%' }} />
+                    <img
+                      src={require(`./assets/images/${cell}_fish.png`)}
+                      alt={`Fish ${cell}`}
+                      style={{
+                        position: 'absolute', // Position the image absolutely inside the cell
+                        top: 0, // Align to the top
+                        left: 0, // Align to the right
+                        width: '32px', // Set image width to 32px
+                        height: '32px', // Set image height to 32px
+                      }}
+                    />
                     <span className="value-overlay">{cell}</span> {/* Display the value over the fish image */}
                   </>
                 )}
