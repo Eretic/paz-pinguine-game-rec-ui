@@ -142,6 +142,18 @@ function GameProgressViewer() {
               <td>{gameSize ? gameSize.height : ''}</td>
             </tr>
             <tr>
+              <td>Players Count:</td>
+              <td>{gameSize ? gameSize.players : ''}</td>
+            </tr>
+            <tr>
+              <td>Max Fish Count:</td>
+              <td>{gameSize ? gameSize.fishes : ''}</td>
+            </tr>
+            <tr>
+              <td>Penguins Count:</td>
+              <td>{gameSize ? gameSize.penguins : ''}</td>
+            </tr>
+            <tr>
               <td>Current Turn:</td>
               <td>{currentTurnIndex}</td>
             </tr>
