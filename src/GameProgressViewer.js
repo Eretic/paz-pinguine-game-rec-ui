@@ -73,6 +73,7 @@ function GameProgressViewer() {
                   width: '48px',
                   height: '48px',
                   position: 'relative', // Ensure the container is positioned relative to its parent
+                  backgroundColor: cell === 0 ? 'grey' : 'white', // Apply gray background for cell value 0
                 }}
               >
                 {cell > 0 && cell < 4 && ( // Check if the cell value is within range for fish images

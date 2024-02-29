@@ -64,10 +64,9 @@ input[type="file"] {
     position: absolute; /* Position the overlay relative to the cell */
     bottom: 2px; /* Distance from bottom edge */
     right: 2px; /* Distance from right edge */
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
-    color: white; /* Text color */
-    font-size: 12px; /* Font size */
-    padding: 2px 4px; /* Padding around the text */
+    background-color: transparent; /* Remove background color */
+    color: rgb(0, 0, 0); /* Text color */
+    font-size: 24px; /* Increase font size */
     border-radius: 4px; /* Rounded corners */
   }
 
@@ -84,6 +83,7 @@ input[type="file"] {
     font-size: 14px; /* Adjust font size */
     font-weight: bold; /* Make the text bold */
     position: absolute; /* Position the text absolutely */
+    padding: 2px 2px; /* Padding around the text */
     bottom: 5px; /* Set distance from bottom */
     right: 5px; /* Set distance from right */
     color: green; /* Set default color to green */
