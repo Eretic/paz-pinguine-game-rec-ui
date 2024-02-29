@@ -157,18 +157,18 @@ function GameProgressViewer() {
         Current Turn: {currentTurnIndex}
       </div>
       <div className="controls">
-        <button onClick={handleFirstTurn} disabled={currentTurnIndex === 0}>
-          First Turn
-        </button>
-        <button onClick={handlePrevTurn} disabled={currentTurnIndex === 0}>
-          Previous Turn
-        </button>
-        <button onClick={handleNextTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
-          Next Turn
-        </button>
-        <button onClick={handleLastTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
-          Last Turn
-        </button>
+                <button onClick={handleFirstTurn} disabled={currentTurnIndex === 0}>
+            <i className="fas fa-step-backward"></i> {/* Icon for first turn */}
+            </button>
+            <button onClick={handlePrevTurn} disabled={currentTurnIndex === 0}>
+            <i className="fas fa-backward"></i> {/* Icon for previous turn */}
+            </button>
+            <button onClick={handleNextTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
+            <i className="fas fa-forward"></i> {/* Icon for next turn */}
+            </button>
+            <button onClick={handleLastTurn} disabled={!turnsData || currentTurnIndex === turnsData.length - 1}>
+            <i className="fas fa-step-forward"></i> {/* Icon for last turn */}
+            </button>
       </div>
     </div>
   );
