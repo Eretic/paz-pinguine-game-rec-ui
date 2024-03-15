@@ -5,10 +5,8 @@ function GameProgressViewer() {
   const [turnsData, setTurnsData] = useState(null);
   const [currentTurnIndex, setCurrentTurnIndex] = useState(0);
   const [gameSize, setGameSize] = useState(null);
-  const [startBoard, setStartBoard] = useState(null);
   const [boardStates, setBoardStates] = useState([]);
   const [playerScores, setPlayerScores] = useState([]);
-  const [playerCount, setPlayerCount] = useState(0);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
