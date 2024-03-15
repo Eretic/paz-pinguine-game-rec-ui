@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/paz-pinguine-game-rec-ui/static/css/main.9064868a.css",
+    "main.js": "/paz-pinguine-game-rec-ui/static/js/main.d9d32bf5.js",
+    "static/js/453.cc314b77.chunk.js": "/paz-pinguine-game-rec-ui/static/js/453.cc314b77.chunk.js",
+    "static/media/2_fish.png": "/paz-pinguine-game-rec-ui/static/media/2_fish.38355d3b3082c6a8d169.png",
+    "static/media/3_fish.png": "/paz-pinguine-game-rec-ui/static/media/3_fish.467061f43660ed1316dd.png",
+    "static/media/1_fish.png": "/paz-pinguine-game-rec-ui/static/media/1_fish.cfe1dbb39dcb8635fbe5.png",
+    "index.html": "/paz-pinguine-game-rec-ui/index.html",
+    "main.9064868a.css.map": "/paz-pinguine-game-rec-ui/static/css/main.9064868a.css.map",
+    "main.d9d32bf5.js.map": "/paz-pinguine-game-rec-ui/static/js/main.d9d32bf5.js.map",
+    "453.cc314b77.chunk.js.map": "/paz-pinguine-game-rec-ui/static/js/453.cc314b77.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9064868a.css",
+    "static/js/main.d9d32bf5.js"
+  ]
+}
